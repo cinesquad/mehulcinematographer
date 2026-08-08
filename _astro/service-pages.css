@@ -1,0 +1,268 @@
+/* ========================================================
+   SERVICE PAGES SHARED STYLES
+   ======================================================== */
+
+.service-hero {
+  position: relative;
+  padding: clamp(5rem, 8vh, 7rem) var(--container-pad-x) clamp(3rem, 5vh, 5rem);
+  text-align: center;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.service-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(232,129,58,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.service-hero-label {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.service-hero h1 { 
+  font-family: var(--font-display); 
+  font-size: var(--text-hero); 
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0 0 1.2rem;
+  color: #fff;
+}
+
+.service-hero h1 em { font-style: italic; color: var(--accent); }
+
+.service-hero-desc { 
+  font-family: var(--font-body); 
+  font-size: var(--text-md); 
+  font-weight: 300;
+  line-height: 1.7;
+  margin: 0; /* Let gap handle spacing */
+}
+
+.service-hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.service-stats-row {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.service-stat { text-align: center; }
+
+.service-stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  color: #fff;
+  display: block;
+}
+
+.service-stat-label {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Service Content Section */
+.service-section { 
+  padding: clamp(2rem, 4vh, 3.5rem) var(--container-pad-x); 
+  max-width: var(--container-max); 
+  margin: 0 auto; 
+}
+
+.service-section-title { 
+  font-family: var(--font-display); 
+  font-size: var(--text-xl); 
+  font-weight: 400;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.service-section-title em { color: var(--accent); font-style: italic; }
+
+.service-section-desc { 
+  font-family: var(--font-body); 
+  font-size: var(--text-md); 
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 700px;
+  margin-bottom: 2rem;
+}
+
+/* Video Grid */
+.service-video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: var(--space-md);
+}
+
+.service-vid-card {
+  display: block;
+  text-decoration: none;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.service-vid-card:hover { transform: translateY(-4px); border-color: rgba(232,129,58,0.3); }
+
+.service-vid-card img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  display: block;
+}
+
+.service-vid-card .vid-info {
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.service-vid-card .vid-name {
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.8);
+  font-weight: 500;
+}
+
+.service-vid-card .vid-yr {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.35);
+}
+
+/* Brand Logos (if applicable) */
+.brand-logos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 1.5rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.brand-logo-item {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-logo-item img {
+  max-height: 50px;
+  max-width: 100%;
+  object-fit: contain;
+  opacity: 0.9;
+  transition: opacity 0.3s, filter 0.3s;
+}
+
+.brand-logo-item:hover img { 
+  opacity: 1; 
+  filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.4)); 
+}
+
+/* Features */
+.service-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+.feature-card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.feature-icon { font-size: 1.6rem; margin-bottom: 0.5rem; display: block; }
+.feature-card h3 { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: 0.3rem; }
+.feature-card p { font-family: var(--font-body); font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.5; }
+
+/* CTA */
+.service-cta-block {
+  text-align: center;
+  padding: clamp(2.5rem, 5vh, 4rem) var(--container-pad-x);
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.service-cta-block p { 
+  font-family: var(--font-body);
+  color: rgba(255,255,255,0.6); 
+  margin-bottom: 1.5rem; 
+}
+
+/* ============================================================
+   COMPACT LAYOUT OVERRIDES FOR BOTTOM SECTIONS
+   ============================================================ */
+/* Form Font Fixes */
+.contact-horizontal-form input,
+.contact-horizontal-form textarea,
+.contact-horizontal-form button {
+  font-family: var(--font-body);
+}
+
+/* Reused Hero CTA Style for Service Pages */
+.hero-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center; /* Prevents stretch in flex columns */
+  padding: .85rem 2.2rem;
+  background: var(--text-primary, #fff);
+  color: var(--bg-primary, #0a0a0a);
+  text-decoration: none;
+  font-family: var(--font-body);
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background .3s ease, color .3s ease, transform .2s ease;
+  margin-top: 0.5rem;
+}
+
+.hero-cta:hover {
+  background: var(--accent, #e8813a);
+  color: #000;
+  transform: translateY(-2px);
+}
+
+/* Remove forced 100vh height from contact section to narrow down the page */
+.contact-minimal-section.ag-section {
+  min-height: auto !important;
+  padding-top: clamp(3rem, 6vh, 4rem) !important;
+  border-top: none !important;
+}
+
+.contact-minimal-section.ag-section .contact-minimal-container {
+  flex: none !important;
+  margin-bottom: clamp(2rem, 5vh, 4rem) !important;
+}

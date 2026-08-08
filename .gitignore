@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# dev tooling (not part of the published site)
+.agent/
+.vscode/
+.antigravity-context.json
+AGENTS.md
+IDEA.md
+
+# old Firebase hosting config (site now on Cloudflare Pages)
+.firebase/
+.firebaserc
+firebase.json
+
+# media notes
+media/README.md

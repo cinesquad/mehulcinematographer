@@ -1,0 +1,113 @@
+/* ========================================================
+   ANTIGRAVITY DESIGN SYSTEM — Single Source of Truth
+   All layout, spacing, typography, and breakpoints live here.
+   ======================================================== */
+
+/* ── 1. Design Tokens ── */
+:root {
+  /* Spacing scale */
+  --space-xs:  clamp(0.5rem,  1vw,   0.75rem);
+  --space-sm:  clamp(0.75rem, 1.5vw, 1.25rem);
+  --space-md:  clamp(1.5rem,  3vw,   2.5rem);
+  --space-lg:  clamp(2.5rem,  5vw,   4rem);
+  --space-xl:  clamp(4rem,    7vw,   6rem);
+
+  /* Container — ONE unified max-width for the entire site */
+  --container-max:   1280px;
+  --container-pad-x: clamp(1.5rem, 5vw, 4rem);
+  --section-pad-y:   clamp(3rem,   6vh, 6rem);
+
+  /* Typography scale */
+  --text-xs:   clamp(0.6rem,  0.9vw,  0.72rem);
+  --text-sm:   clamp(0.8rem,  1.1vw,  0.95rem);
+  --text-base: clamp(0.9rem,  1.4vw,  1.05rem);
+  --text-md:   clamp(1rem,    1.6vw,  1.3rem);
+  --text-lg:   clamp(1.6rem,  3vw,    2.4rem);
+  --text-xl:   clamp(2.4rem,  6.5vw,  3.8rem);
+  --text-hero: clamp(2.8rem,  7vw,    4.5rem);
+}
+
+/* ── 2. Global Reset ── */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* Responsive media */
+img, video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── 3. Universal Section Wrapper ── */
+.ag-section {
+  width: 100%;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: var(--section-pad-y) var(--container-pad-x);
+  overflow: hidden;
+}
+
+/* ── 4. Universal Content Container ── */
+.ag-container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-lg);
+  flex: 1;
+}
+
+/* ── 5. Standard 2-col Grid ── */
+.ag-grid-2-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-lg);
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .ag-grid-2-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── 6. Typography Utilities ── */
+.ag-eyebrow {
+  font-family: var(--font-body);
+  font-size: var(--text-xs);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+  display: block;
+}
+
+.ag-title {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text-primary);
+}
+
+.ag-subtitle {
+  font-family: var(--font-body);
+  font-size: var(--text-md);
+  line-height: 1.7;
+  color: var(--text-secondary);
+  font-weight: 300;
+  max-width: 720px;
+  margin: 0 auto;
+}
