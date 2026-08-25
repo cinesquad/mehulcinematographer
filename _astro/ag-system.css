@@ -111,3 +111,74 @@ img, video {
   max-width: 720px;
   margin: 0 auto;
 }
+
+/* ── 7. Global Unified Footer ── */
+footer,
+.contact-minimal-section footer {
+  width: 100% !important;
+  padding: 2.2rem clamp(1.5rem, 5vw, 4rem) 2.5rem !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.9rem !important;
+  background: var(--bg-primary, #0a0b0e) !important;
+  box-sizing: border-box !important;
+  text-align: center !important;
+  margin-top: auto !important;
+}
+
+footer .footer-name,
+.footer-name {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.85rem !important;
+  color: rgba(255, 255, 255, 0.75) !important;
+  letter-spacing: 0.03em !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  width: 100% !important;
+  display: block !important;
+}
+
+footer .footer-service-links,
+.footer-service-links {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.5rem 1.5rem !important;
+  justify-content: center !important;
+  align-items: center !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  width: 100% !important;
+}
+
+footer .footer-service-links a,
+.footer-service-links a {
+  color: rgba(255, 255, 255, 0.45) !important;
+  font-size: 0.8rem !important;
+  text-decoration: none !important;
+  font-family: 'Poppins', sans-serif !important;
+  transition: color 0.2s ease !important;
+}
+
+footer .footer-service-links a:hover,
+footer .footer-service-links a[aria-current="page"],
+.footer-service-links a:hover,
+.footer-service-links a[aria-current="page"] {
+  color: #ff7d3b !important;
+}
+
+footer .footer-copy,
+.footer-copy {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 0.78rem !important;
+  color: rgba(255, 255, 255, 0.35) !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+  text-align: center !important;
+  width: 100% !important;
+  display: block !important;
+}
