@@ -3,28 +3,52 @@
    All layout, spacing, typography, and breakpoints live here.
    ======================================================== */
 
-/* ── 1. Design Tokens ── */
+/* ── 1. Design Tokens (Compiled from design.md & data/design.json) ── */
 :root {
-  /* Spacing scale */
-  --space-xs:  clamp(0.5rem,  1vw,   0.75rem);
-  --space-sm:  clamp(0.75rem, 1.5vw, 1.25rem);
-  --space-md:  clamp(1.5rem,  3vw,   2.5rem);
-  --space-lg:  clamp(2.5rem,  5vw,   4rem);
-  --space-xl:  clamp(4rem,    7vw,   6rem);
-
-  /* Container — ONE unified max-width for the entire site */
-  --container-max:   1280px;
+  --bg-primary: #0A0A0A;
+  --bg-secondary: #121212;
+  --text-primary: #FFFFFF;
+  --text-secondary: #FFFFFF;
+  --text-tertiary: #6E6E6E;
+  --border-color: #3B3B3B;
+  --bg-rgb: 10, 10, 10;
+  --accent: #FF7024;
+  --accent-teal: #00DBD8;
+  --accent-light: #FF9865;
+  --accent-gold: #F5A623;
+  --color-error: #ff3c3c;
+  --color-whatsapp: #25d366;
+  --color-brand-blue: #0082c3;
+  --color-amber: #f0b429;
+  --color-ink: #000000;
+  --font-display: "Raleway", sans-serif;
+  --font-body: Raleway, sans-serif;
+  --font-highlight: "Raleway", cursive;
+  --grain-opacity: 0.008;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-btn: 50px;
+  --container-max: 1280px;
   --container-pad-x: clamp(1.5rem, 5vw, 4rem);
-  --section-pad-y:   clamp(3rem,   6vh, 6rem);
-
-  /* Typography scale */
-  --text-xs:   clamp(0.6rem,  0.9vw,  0.72rem);
-  --text-sm:   clamp(0.8rem,  1.1vw,  0.95rem);
-  --text-base: clamp(0.9rem,  1.4vw,  1.05rem);
-  --text-md:   clamp(1rem,    1.6vw,  1.3rem);
-  --text-lg:   clamp(1.6rem,  3vw,    2.4rem);
-  --text-xl:   clamp(2.4rem,  6.5vw,  3.8rem);
-  --text-hero: clamp(2.8rem,  7vw,    4.5rem);
+  --section-pad-y: clamp(3rem, 6vh, 6rem);
+  --space-xs: clamp(0.5rem,  1vw,   0.75rem);
+  --space-sm: clamp(0.75rem, 1.5vw, 1.25rem);
+  --space-md: clamp(1.5rem,  3vw,   2.5rem);
+  --space-lg: clamp(2.5rem,  5vw,   4rem);
+  --space-xl: clamp(4rem,    7vw,   6rem);
+  --text-xs: clamp(0.68rem, 0.85vw, 0.76rem);
+  --text-sm: clamp(0.82rem, 0.95vw, 0.9rem);
+  --text-base: clamp(0.92rem, 1.1vw, 1.02rem);
+  --text-md: clamp(1.02rem, 1.35vw, 1.18rem);
+  --text-lg: clamp(1.25rem, 2vw, 1.45rem);
+  --text-xl: clamp(1.8rem, 3.6vw, 2.5rem);
+  --text-hero: clamp(2.5rem, 5.5vw, 3.8rem);
+  --font-heading-weight: 600;
+  --font-body-weight: 400;
+  --ease-brand: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 0.3s;
+  --dur-reveal: 0.9s;
 }
 
 /* ── 2. Global Reset ── */
@@ -83,33 +107,241 @@ img, video {
   }
 }
 
-/* ── 6. Typography Utilities ── */
-.ag-eyebrow {
-  font-family: var(--font-body);
-  font-size: var(--text-xs);
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--accent);
-  font-weight: 600;
-  display: block;
-}
+/* ── 6. Global Typography Standardizer (Unified System) ── */
 
-.ag-title {
-  font-family: var(--font-display);
-  font-size: var(--text-xl);
-  font-weight: 400;
-  line-height: 1.1;
-  color: var(--text-primary);
-}
-
-.ag-subtitle {
-  font-family: var(--font-body);
-  font-size: var(--text-md);
+/* Base font setup */
+body {
+  font-family: var(--font-body, 'Raleway', sans-serif);
+  font-size: var(--text-base);
+  font-weight: var(--font-body-weight, 400);
   line-height: 1.7;
-  color: var(--text-secondary);
-  font-weight: 300;
-  max-width: 720px;
-  margin: 0 auto;
+  color: var(--text-secondary, #ffffff);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 6.1 Hero & Top-level Headings (H1) */
+h1,
+.hero-title,
+.service-hero h1,
+.port-header h1,
+.blog-hero h1,
+.article-header h1 {
+  font-family: var(--font-display, 'Raleway', sans-serif) !important;
+  font-size: var(--text-hero) !important;
+  font-weight: 700 !important;
+  line-height: 1.14 !important;
+  letter-spacing: -0.02em !important;
+  color: var(--text-primary, #ffffff) !important;
+}
+
+/* 6.1.1 Video Detail Page Title (Compact, single-line fitting, elegant) */
+.video-title {
+  font-family: var(--font-display, 'Raleway', sans-serif) !important;
+  font-size: clamp(1.4rem, 2.1vw, 1.85rem) !important;
+  font-weight: 600 !important;
+  line-height: 1.22 !important;
+  letter-spacing: -0.015em !important;
+  color: var(--text-primary, #ffffff) !important;
+  margin-top: 0 !important;
+  margin-bottom: 1.2rem !important;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 900px) {
+  .video-title {
+    font-size: clamp(1.25rem, 3.4vw, 1.65rem) !important;
+    line-height: 1.25 !important;
+    margin-bottom: 1rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .video-title {
+    font-size: clamp(1.12rem, 4.2vw, 1.32rem) !important;
+    line-height: 1.28 !important;
+    margin-bottom: 0.85rem !important;
+  }
+}
+
+/* 6.2 Section Headings (H2) */
+h2,
+.section-title,
+.service-section-title,
+.about-name,
+.contact-title,
+.article-content h2 {
+  font-family: var(--font-display, 'Raleway', sans-serif) !important;
+  font-size: var(--text-xl) !important;
+  font-weight: var(--font-heading-weight, 600) !important;
+  line-height: 1.22 !important;
+  letter-spacing: -0.01em !important;
+  color: var(--text-primary, #ffffff) !important;
+}
+
+/* 6.3 Card & Subsection Headings (H3) */
+h3,
+.feature-card h3,
+.sidebar-title,
+.about-location-title,
+.article-content h3 {
+  font-family: var(--font-display, 'Raleway', sans-serif) !important;
+  font-size: var(--text-lg) !important;
+  font-weight: 600 !important;
+  line-height: 1.3 !important;
+  letter-spacing: -0.005em !important;
+  color: var(--text-primary, #ffffff) !important;
+}
+
+/* Universal Highlight Accent Words inside headings & content (Matches size & style, keeps gradient) */
+em,
+h1 em,
+h2 em,
+h3 em,
+.service-hero h1 em,
+.service-section-title em,
+.section-title em,
+.blog-hero h1 em,
+.hero-title em,
+.about-name em,
+.contact-title em {
+  font-family: inherit !important;
+  font-style: normal !important;
+  font-size: 1em !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+  text-transform: inherit !important;
+  display: inline-block !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: linear-gradient(135deg, var(--accent, #FF7024) 20%, var(--accent-light, #FF9865) 60%, var(--accent-teal, #00DBD8) 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+  color: var(--accent, #FF7024) !important;
+  filter: none !important;
+}
+
+/* 6.4 Subtitles, Leads & Roles */
+.ag-subtitle,
+.hero-sub,
+.service-hero-desc,
+.service-section-desc,
+.contact-subtitle,
+.about-role,
+.blog-hero p {
+  font-family: var(--font-body, 'Raleway', sans-serif) !important;
+  font-size: var(--text-md) !important;
+  font-weight: 400 !important;
+  line-height: 1.68 !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* 6.5 Body Text & Paragraphs */
+p,
+.about-desc,
+.about-location-desc,
+.service-cta-block p,
+.feature-card p,
+.article-content p {
+  font-family: var(--font-body, 'Raleway', sans-serif) !important;
+  font-size: var(--text-base) !important;
+  font-weight: var(--font-body-weight, 400) !important;
+  line-height: 1.7 !important;
+  color: rgba(255, 255, 255, 0.72) !important;
+}
+
+/* 6.6 Video & Project Card Names (Uniform across Portfolio, Services & Recommendations) */
+.vid-name,
+.service-vid-card .vid-name,
+.rec-name,
+.blog-card-title {
+  font-family: var(--font-display, 'Raleway', sans-serif) !important;
+  font-size: clamp(0.92rem, 1.1vw, 1.02rem) !important;
+  font-weight: 600 !important;
+  line-height: 1.35 !important;
+  color: var(--text-primary, #ffffff) !important;
+  letter-spacing: 0 !important;
+  transition: color 0.25s ease !important;
+}
+
+.vid-card:hover .vid-name,
+.service-vid-card:hover .vid-name,
+.rec-card:hover .rec-name,
+.blog-card:hover .blog-card-title {
+  color: var(--accent, #ff7024) !important;
+}
+
+/* 6.7 Testimonials Standardization */
+.testimonial-quote {
+  font-family: var(--font-display, 'Raleway', sans-serif) !important;
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem) !important;
+  font-weight: 400 !important;
+  line-height: 1.65 !important;
+  font-style: italic !important;
+  color: var(--text-primary, #ffffff) !important;
+  text-align: center !important;
+}
+
+.client-name {
+  font-family: var(--font-body, 'Raleway', sans-serif) !important;
+  font-size: 0.92rem !important;
+  font-weight: 600 !important;
+  color: var(--text-primary, #ffffff) !important;
+}
+
+.client-comp {
+  font-family: var(--font-body, 'Raleway', sans-serif) !important;
+  font-size: 0.76rem !important;
+  color: var(--accent, #ff7024) !important;
+}
+
+/* 6.8 Eyebrows, Labels & Badges */
+.ag-eyebrow,
+.service-hero-label,
+.category-tag,
+.rec-cat,
+.iso-label,
+.blog-hero-eyebrow {
+  font-family: var(--font-body, 'Raleway', sans-serif) !important;
+  font-size: var(--text-xs) !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: var(--accent, #ff7024) !important;
+  font-weight: 600 !important;
+  display: inline-block !important;
+}
+
+/* 6.9 Metadata, Years & Labels */
+.vid-yr,
+.rec-yr,
+.service-stat-label,
+.credit-row dt {
+  font-family: var(--font-body, 'Raleway', sans-serif) !important;
+  font-size: var(--text-xs) !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  color: var(--accent, #ff7024) !important;
+}
+
+.service-stat-num {
+  font-family: var(--font-display, 'Raleway', sans-serif) !important;
+  font-size: clamp(2rem, 3.8vw, 2.6rem) !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+}
+
+/* 6.10 Buttons & Interactive Pills */
+.hero-cta,
+.cat-btn,
+.blog-cat-btn {
+  font-family: var(--font-body, 'Raleway', sans-serif) !important;
+  font-size: var(--text-xs) !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  font-weight: 600 !important;
 }
 
 /* ── 7. Global Unified Footer ── */
@@ -207,4 +439,640 @@ footer .footer-copy,
 .video-desc p:last-child {
   margin-bottom: 0 !important;
 }
+
+/* ── 9. Universal Mobile Navigation Drawer & Social Icons Fix ── */
+.nav-drawer {
+  display: none !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+  max-height: 100dvh !important;
+  z-index: 290 !important;
+  background: rgba(10, 10, 10, 0.98) !important;
+  backdrop-filter: blur(25px) !important;
+  -webkit-backdrop-filter: blur(25px) !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  text-align: center !important;
+  padding: calc(75px + env(safe-area-inset-top, 0.5rem)) 1.5rem calc(2.5rem + env(safe-area-inset-bottom, 0.5rem)) !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  overscroll-behavior: contain !important;
+  box-sizing: border-box !important;
+  gap: clamp(0.35rem, 1.8vh, 0.9rem) !important;
+}
+
+.nav-drawer.open {
+  display: flex !important;
+  animation: agDrawerSlideIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+@keyframes agDrawerSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-drawer .drawer-link,
+.nav-drawer a:not(.drawer-socials a) {
+  font-family: var(--font-display, 'Poppins', sans-serif) !important;
+  font-size: clamp(1.15rem, 3.2vh, 1.6rem) !important;
+  font-weight: 500 !important;
+  color: rgba(255, 255, 255, 0.82) !important;
+  text-decoration: none !important;
+  letter-spacing: 0.04em !important;
+  padding: 0.35rem 1.25rem !important;
+  border-radius: 8px !important;
+  min-height: 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  transition: color 0.2s ease, background-color 0.2s ease, transform 0.2s ease !important;
+  position: relative !important;
+}
+
+.nav-drawer .drawer-link:after,
+.nav-drawer a:not(.drawer-socials a):after {
+  display: none !important;
+}
+
+.nav-drawer .drawer-link:hover,
+.nav-drawer .drawer-link.active,
+.nav-drawer a:not(.drawer-socials a):hover,
+.nav-drawer a:not(.drawer-socials a).active {
+  color: #ff7d3b !important;
+  background: rgba(255, 125, 59, 0.1) !important;
+  transform: scale(1.02) !important;
+}
+
+.drawer-socials {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  gap: 0.75rem !important;
+  margin-top: clamp(0.5rem, 1.8vh, 1.25rem) !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  padding-top: clamp(0.85rem, 2vh, 1.25rem) !important;
+  padding-bottom: 0.5rem !important;
+  width: min(92%, 360px) !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.drawer-socials a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 42px !important;
+  height: 42px !important;
+  min-width: 42px !important;
+  min-height: 42px !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  text-decoration: none !important;
+  padding: 0 !important;
+}
+
+.drawer-socials a:hover {
+  background: rgba(255, 125, 59, 0.2) !important;
+  border-color: #ff7d3b !important;
+  color: #ff7d3b !important;
+  transform: translateY(-2px) scale(1.08) !important;
+}
+
+.drawer-socials a svg {
+  width: 18px !important;
+  height: 18px !important;
+  fill: currentColor !important;
+  display: block !important;
+}
+
+/* Cinema Technical Specs Badging for Video Detail Pages */
+.credit-row dd .spec-badge {
+  display: inline-block;
+  padding: 0.15rem 0.55rem;
+  background: rgba(255, 112, 36, 0.12);
+  border: 1px solid rgba(255, 112, 36, 0.35);
+  color: var(--accent, #ff7024);
+  font-family: var(--font-mono, ui-monospace, monospace);
+  font-size: 0.72rem;
+  font-weight: 600;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+}
+
+/* Universal Optical Viewfinder Reticle & Rack-Focus for Video Thumbnails */
+.vid-thumb,
+.rec-thumb,
+.service-vid-thumb {
+  position: relative !important;
+  overflow: hidden !important;
+  background: #0d0d0f;
+}
+
+/* Viewfinder Framing Overlay (Corner brackets & center crosshair) */
+.vid-thumb::after,
+.rec-thumb::after,
+.service-vid-thumb::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' fill='none' stroke='%23ff7024' stroke-width='1.5' stroke-linecap='round'%3E%3Cpath d='M 10 22 L 10 10 L 22 10' /%3E%3Cpath d='M 90 22 L 90 10 L 78 10' /%3E%3Cpath d='M 10 78 L 10 90 L 22 90' /%3E%3Cpath d='M 90 78 L 90 90 L 78 90' /%3E%3Cline x1='46' y1='50' x2='54' y2='50' /%3E%3Cline x1='50' y1='46' x2='50' y2='54' /%3E%3C/svg%3E");
+  background-size: 86% 86%;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 0.35s cubic-bezier(0.16, 1, 0.3, 1), transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.vid-card:hover .vid-thumb::after,
+.service-vid-card:hover .vid-thumb::after,
+.service-vid-card:hover .service-vid-thumb::after,
+.rec-card:hover .rec-thumb::after {
+  opacity: 0.95;
+  transform: scale(1);
+}
+
+/* Optical rack-focus smooth push */
+.vid-thumb img,
+.rec-thumb img,
+.service-vid-thumb img,
+.service-vid-card img {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), filter 0.5s ease !important;
+}
+
+.vid-card:hover .vid-thumb img,
+.service-vid-card:hover img,
+.service-vid-card:hover .vid-thumb img,
+.rec-card:hover .rec-thumb img {
+  transform: scale(1.05) !important;
+  filter: contrast(1.04) brightness(1.03) !important;
+}
+
+/* Cinema Monitor Card Hover Glow */
+.vid-card:hover,
+.service-vid-card:hover,
+.rec-card:hover {
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5), 0 0 24px rgba(255, 112, 36, 0.15) !important;
+  border-color: rgba(255, 112, 36, 0.4) !important;
+}
+
+/* ============================================================
+   MASTER CINEMA CLAPPER SLATE CONTACT SYSTEM
+   All-in-One Director's Clapper Slate for Desktop & Mobile
+   ============================================================ */
+.master-cinema-slate {
+  position: relative !important;
+  width: 100% !important;
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  background: #101115 !important;
+  border: 1.5px solid rgba(255, 255, 255, 0.16) !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.7), 0 0 50px rgba(255, 112, 36, 0.08) !important;
+  box-sizing: border-box !important;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.master-cinema-slate:focus-within {
+  border-color: rgba(255, 112, 36, 0.5) !important;
+  box-shadow: 0 32px 80px rgba(0, 0, 0, 0.8), 0 0 60px rgba(255, 112, 36, 0.16) !important;
+}
+
+/* 1. Clapper Stick (Top angled chevron bars & hinge pin) */
+.slate-clapper-stick {
+  position: relative !important;
+  width: 100% !important;
+  height: 22px !important;
+  background: repeating-linear-gradient(
+    -45deg,
+    #f2f2f6 0,
+    #f2f2f6 14px,
+    #131418 14px,
+    #131418 28px
+  ) !important;
+  background-size: auto !important;
+  border-bottom: 2px solid #000000 !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+}
+
+.clapper-hinge-pin {
+  position: absolute !important;
+  left: 14px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 8px !important;
+  height: 8px !important;
+  border-radius: 50% !important;
+  background: radial-gradient(circle, #ffffff 20%, #888888 70%, #222222 100%) !important;
+  border: 1.5px solid #111111 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* 2. Slate Board Content Body */
+.slate-board-content {
+  padding: clamp(2.2rem, 4vw, 3.2rem) clamp(1.6rem, 3.5vw, 3rem) !important;
+  box-sizing: border-box !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  text-align: center !important;
+}
+
+/* Headline & Subtitle */
+.slate-board-content .contact-title,
+.slate-board-content .slate-main-heading {
+  font-family: var(--font-display, 'Raleway', sans-serif) !important;
+  font-size: clamp(2.1rem, 4.5vw, 3.4rem) !important;
+  font-weight: 400 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.01em !important;
+  color: #ffffff !important;
+  margin: 0 0 0.85rem 0 !important;
+  text-align: center !important;
+}
+
+.slate-board-content .contact-subtitle,
+.slate-board-content .slate-main-sub {
+  font-family: var(--font-body, 'Raleway', sans-serif) !important;
+  font-size: clamp(0.92rem, 1.3vw, 1.05rem) !important;
+  line-height: 1.65 !important;
+  color: rgba(255, 255, 255, 0.72) !important;
+  max-width: 720px !important;
+  margin: 0 auto 1.8rem auto !important;
+  text-align: center !important;
+}
+
+/* 3. Clean Camera & Production Telemetry Strip (Moved here replacing the 5 chunky blocks) */
+.slate-telemetry-strip {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: clamp(0.75rem, 2vw, 1.8rem) !important;
+  padding: 0.65rem 1.4rem !important;
+  background: rgba(255, 255, 255, 0.025) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 6px !important;
+  margin: 0 auto 2.2rem auto !important;
+  width: 100% !important;
+  max-width: 860px !important;
+  box-sizing: border-box !important;
+  flex-wrap: wrap !important;
+}
+
+.slate-tel-item {
+  display: inline-flex !important;
+  align-items: baseline !important;
+  gap: 0.5rem !important;
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace) !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.08em !important;
+  white-space: nowrap !important;
+}
+
+.slate-tel-k {
+  color: var(--accent, #ff7024) !important;
+  font-weight: 700 !important;
+  font-size: 0.64rem !important;
+}
+
+.slate-tel-v {
+  color: rgba(255, 255, 255, 0.9) !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+}
+
+.slate-tel-dot {
+  color: rgba(255, 255, 255, 0.25) !important;
+  font-weight: 600 !important;
+}
+
+/* 4. Direct Contact Channels (Human-Crafted Editorial Typography — No Generic AI Boxes) */
+.slate-direct-contact {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: clamp(2rem, 5vw, 4.5rem) !important;
+  margin: 0 auto 2.4rem auto !important;
+  width: 100% !important;
+  max-width: 860px !important;
+  box-sizing: border-box !important;
+}
+
+.slate-contact-col {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  text-align: center !important;
+}
+
+.slate-col-label {
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace) !important;
+  font-size: 0.68rem !important;
+  letter-spacing: 0.12em !important;
+  color: var(--accent, #ff7024) !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+}
+
+.slate-col-value {
+  font-family: var(--font-display, 'Raleway', sans-serif) !important;
+  font-size: clamp(1.2rem, 2.2vw, 1.75rem) !important;
+  font-weight: 400 !important;
+  color: #ffffff !important;
+  text-decoration: none !important;
+  transition: color 0.3s ease, transform 0.2s ease !important;
+  display: inline-block !important;
+  white-space: nowrap !important;
+}
+
+.slate-col-value:hover {
+  color: var(--accent, #ff7024) !important;
+  transform: translateY(-1px) !important;
+}
+
+.slate-contact-divider {
+  width: 1px !important;
+  height: 52px !important;
+  background: rgba(255, 255, 255, 0.14) !important;
+}
+
+/* 5. Master Action Form (Spacious 2-Row Layout + Project Brief Textarea) */
+.slate-action-form {
+  width: 100% !important;
+  max-width: 860px !important;
+  margin: 0 auto !important;
+  box-sizing: border-box !important;
+}
+
+.slate-form-stack {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1.1rem !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Row 1: Name & Contact Info (2-Col on Desktop) */
+.slate-form-row-2col {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 1.1rem !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.slate-form-field {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.45rem !important;
+  text-align: left !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+.slate-field-lbl-bar {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 0.8rem !important;
+  flex-wrap: wrap !important;
+}
+
+.slate-field-lbl {
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, monospace) !important;
+  font-size: 0.65rem !important;
+  letter-spacing: 0.12em !important;
+  color: rgba(255, 255, 255, 0.65) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+}
+
+.slate-field-hint {
+  font-family: var(--font-body, 'Raleway', sans-serif) !important;
+  font-size: 0.68rem !important;
+  color: rgba(255, 255, 255, 0.4) !important;
+  font-weight: 400 !important;
+}
+
+.slate-form-field input,
+.slate-form-field textarea {
+  width: 100% !important;
+  box-sizing: border-box !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.14) !important;
+  border-radius: 8px !important;
+  padding: 0.85rem 1.15rem !important;
+  font-family: var(--font-body, 'Raleway', sans-serif) !important;
+  font-size: 0.92rem !important;
+  color: #ffffff !important;
+  outline: none !important;
+  transition: all 0.25s ease !important;
+  margin: 0 !important;
+}
+
+.slate-form-field input {
+  height: 50px !important;
+}
+
+.slate-form-field textarea {
+  min-height: 100px !important;
+  resize: vertical !important;
+  line-height: 1.55 !important;
+}
+
+.slate-form-field input::placeholder,
+.slate-form-field textarea::placeholder {
+  color: rgba(255, 255, 255, 0.35) !important;
+  font-size: 0.88rem !important;
+}
+
+.slate-form-field input:focus,
+.slate-form-field textarea:focus {
+  border-color: #ff7024 !important;
+  background: rgba(255, 112, 36, 0.05) !important;
+  box-shadow: 0 0 0 3px rgba(255, 112, 36, 0.18) !important;
+}
+
+/* Action Row (Submit Button) */
+.slate-form-actions {
+  display: flex !important;
+  justify-content: flex-end !important;
+  width: 100% !important;
+  margin-top: 0.2rem !important;
+}
+
+.slate-submit-btn {
+  height: 50px !important;
+  padding: 0 2.4rem !important;
+  background: linear-gradient(135deg, #ff7024 0%, #ff8c4b 100%) !important;
+  color: #0b0b0d !important;
+  border: none !important;
+  border-radius: 8px !important;
+  font-family: var(--font-body, 'Raleway', sans-serif) !important;
+  font-size: 0.84rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.6rem !important;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease !important;
+  box-shadow: 0 4px 18px rgba(255, 112, 36, 0.35) !important;
+}
+
+.slate-submit-btn:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 26px rgba(255, 112, 36, 0.5) !important;
+}
+
+.slate-submit-btn svg {
+  transition: transform 0.2s ease !important;
+}
+
+.slate-submit-btn:hover svg {
+  transform: translateX(3px) !important;
+}
+
+.slate-action-form .contact-form-success {
+  margin-top: 1.2rem !important;
+  text-align: center !important;
+  color: #25d366 !important;
+  font-family: var(--font-mono, monospace) !important;
+  font-size: 0.85rem !important;
+  display: none;
+}
+
+/* 6. Responsive Tablet & Mobile Viewports */
+@media (max-width: 768px) {
+  .slate-direct-contact {
+    flex-direction: column !important;
+    gap: 1rem !important;
+    margin-bottom: 1.6rem !important;
+  }
+
+  .slate-contact-divider {
+    display: none !important;
+  }
+
+  .slate-col-value {
+    font-size: 1.05rem !important;
+    white-space: nowrap !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .slate-clapper-stick {
+    height: 20px !important;
+    background: repeating-linear-gradient(
+      -45deg,
+      #f2f2f6 0,
+      #f2f2f6 11px,
+      #111215 11px,
+      #111215 22px
+    ) !important;
+    background-size: auto !important;
+  }
+
+  .clapper-hinge-pin {
+    width: 6px !important;
+    height: 6px !important;
+    left: 10px !important;
+  }
+
+  .slate-board-content {
+    padding: 1.3rem 0.9rem 1.6rem 0.9rem !important;
+  }
+
+  .slate-board-content .contact-title,
+  .slate-board-content .slate-main-heading {
+    font-size: 1.75rem !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .slate-board-content .contact-subtitle,
+  .slate-board-content .slate-main-sub {
+    font-size: 0.84rem !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .slate-telemetry-strip {
+    padding: 0.4rem 0.6rem !important;
+    gap: 0.25rem 0.65rem !important;
+    margin-bottom: 1.2rem !important;
+  }
+
+  .slate-tel-item {
+    font-size: 0.6rem !important;
+  }
+
+  .slate-tel-dot {
+    display: none !important;
+  }
+
+  .slate-direct-contact {
+    gap: 0.85rem !important;
+    margin-bottom: 1.4rem !important;
+  }
+
+  .slate-contact-col {
+    gap: 0.15rem !important;
+  }
+
+  .slate-col-label {
+    font-size: 0.58rem !important;
+    letter-spacing: 0.1em !important;
+  }
+
+  .slate-col-value {
+    font-size: 0.92rem !important;
+    white-space: nowrap !important;
+    letter-spacing: 0.01em !important;
+  }
+
+  .slate-form-row-2col {
+    grid-template-columns: 1fr !important;
+    gap: 0.85rem !important;
+  }
+
+  .slate-form-field textarea {
+    min-height: 80px !important;
+  }
+
+  .slate-form-actions {
+    justify-content: stretch !important;
+  }
+
+  .slate-submit-btn {
+    width: 100% !important;
+    height: 48px !important;
+  }
+}
+
+
+
+
+
 

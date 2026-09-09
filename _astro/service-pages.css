@@ -37,7 +37,17 @@
   color: #fff;
 }
 
-.service-hero h1 em { font-style: italic; color: var(--accent); }
+.service-hero h1 em { 
+  font-style: normal; 
+  font-size: 1em;
+  font-family: inherit;
+  font-weight: inherit;
+  background: linear-gradient(135deg, var(--accent, #FF7024) 20%, var(--accent-teal, #00DBD8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: var(--accent); 
+}
 
 .service-hero-desc { 
   font-family: var(--font-body); 
@@ -98,7 +108,17 @@
   color: #fff;
 }
 
-.service-section-title em { color: var(--accent); font-style: italic; }
+.service-section-title em { 
+  font-style: normal; 
+  font-size: 1em;
+  font-family: inherit;
+  font-weight: inherit;
+  background: linear-gradient(135deg, var(--accent, #FF7024) 20%, var(--accent-teal, #00DBD8) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: var(--accent); 
+}
 
 .service-section-desc { 
   font-family: var(--font-body); 
@@ -196,15 +216,55 @@
 }
 
 .feature-card {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.07);
+  background: rgba(255,255,255,0.025);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 12px;
-  padding: 1.25rem;
+  padding: 1.6rem 1.5rem;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  position: relative;
+  overflow: hidden;
 }
 
-.feature-icon { font-size: 1.6rem; margin-bottom: 0.5rem; display: block; }
-.feature-card h3 { font-family: var(--font-display); font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: 0.3rem; }
-.feature-card p { font-family: var(--font-body); font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.5; }
+.feature-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28px;
+  height: 2px;
+  background: var(--accent, #ff7d3b);
+  opacity: 0.8;
+  transition: width 0.3s ease;
+}
+
+.feature-card:hover {
+  background: rgba(255,255,255,0.045);
+  border-color: rgba(255, 125, 59, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+}
+
+.feature-card:hover::before {
+  width: 100%;
+}
+
+.feature-card h3 {
+  font-family: var(--font-display, 'Raleway', sans-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 0.6rem;
+  letter-spacing: -0.01em;
+}
+
+.feature-card p {
+  font-family: var(--font-body, 'Raleway', sans-serif);
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.65;
+  margin: 0;
+}
 
 /* CTA */
 .service-cta-block {
