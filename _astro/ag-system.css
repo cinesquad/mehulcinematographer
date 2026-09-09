@@ -15,7 +15,7 @@
   --accent: #FF7024;
   --accent-teal: #00DBD8;
   --accent-light: #FF9865;
-  --accent-gold: #F5A623;
+  --accent-gold: #FF7024;
   --color-error: #ff3c3c;
   --color-whatsapp: #25d366;
   --color-brand-blue: #0082c3;
@@ -28,7 +28,7 @@
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 14px;
-  --radius-btn: 50px;
+  --radius-btn: 10px;
   --container-max: 1280px;
   --container-pad-x: clamp(1.5rem, 5vw, 4rem);
   --section-pad-y: clamp(3rem, 6vh, 6rem);
@@ -44,7 +44,7 @@
   --text-lg: clamp(1.25rem, 2vw, 1.45rem);
   --text-xl: clamp(1.8rem, 3.6vw, 2.5rem);
   --text-hero: clamp(2.5rem, 5.5vw, 3.8rem);
-  --font-heading-weight: 600;
+  --font-heading-weight: 500;
   --font-body-weight: 400;
   --ease-brand: cubic-bezier(0.22, 1, 0.36, 1);
   --dur-fast: 0.3s;
@@ -397,6 +397,9 @@ footer .footer-service-links a,
   font-family: 'Poppins', sans-serif !important;
   font-weight: 500 !important;
   transition: color 0.2s ease !important;
+  min-height: 44px !important;
+  display: inline-flex !important;
+  align-items: center !important;
 }
 
 footer .footer-service-links a:hover,
@@ -534,10 +537,10 @@ footer .footer-copy,
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
-  width: 42px !important;
-  height: 42px !important;
-  min-width: 42px !important;
-  min-height: 42px !important;
+  width: 44px !important;
+  height: 44px !important;
+  min-width: 44px !important;
+  min-height: 44px !important;
   border-radius: 50% !important;
   background: rgba(255, 255, 255, 0.05) !important;
   border: 1px solid rgba(255, 255, 255, 0.14) !important;
@@ -1071,8 +1074,12 @@ footer .footer-copy,
   }
 }
 
-
-
-
-
-
+/* ── 10. iOS Auto-Zoom Prevention (inputs < 16px trigger zoom on iOS) ── */
+@media screen and (max-width: 768px) {
+  .slate-form-field input,
+  .slate-form-field textarea,
+  .contact-horizontal-form input,
+  .contact-horizontal-form textarea {
+    font-size: 16px !important;
+  }
+}

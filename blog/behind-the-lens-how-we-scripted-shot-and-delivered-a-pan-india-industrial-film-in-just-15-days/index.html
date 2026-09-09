@@ -300,23 +300,27 @@
     }
   </style>
 
-  <!-- Schema.org BlogPosting Structured Data -->
+  <!-- Schema.org BlogPosting & TechArticle Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
+    "@type": ["TechArticle", "BlogPosting"],
+    "@id": "https://mehulcinematographer.com/blog/behind-the-lens-how-we-scripted-shot-and-delivered-a-pan-india-industrial-film-in-just-15-days/#article",
     "headline": "Behind the Lens: How We Scripted, Shot, and Delivered a Pan-India Industrial Film in Just 15 Days",
     "description": "When an agency needed a pan-India corporate film for Gokul Agro delivered in 15 days, we built an agile production pipeline from scratch handling multi-plant direction, cinematography, and rapid-turnaround post-production.",
     "image": "https://img.youtube.com/vi/NGPyji067ZM/maxresdefault.jpg",
+    "proficiencyLevel": "Expert",
     "author": {
       "@type": "Person",
+      "@id": "https://mehulcinematographer.com/#person",
       "name": "Mehul Prajapati",
       "jobTitle": "Cinematographer & DOP",
       "url": "https://mehulcinematographer.com/"
     },
     "publisher": {
       "@type": "Organization",
-      "name": "9th Sky Network",
+      "@id": "https://mehulcinematographer.com/#agency",
+      "name": "9th Sky Network LLP",
       "logo": {
         "@type": "ImageObject",
         "url": "https://mehulcinematographer.com/media/mehul-bio.png"
@@ -328,6 +332,18 @@
       "@type": "WebPage",
       "@id": "https://mehulcinematographer.com/blog/behind-the-lens-how-we-scripted-shot-and-delivered-a-pan-india-industrial-film-in-just-15-days/"
     },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "Cinematography",
+        "sameAs": "https://en.wikipedia.org/wiki/Cinematography"
+      },
+      {
+        "@type": "Thing",
+        "name": "Film Production",
+        "sameAs": "https://en.wikipedia.org/wiki/Filmmaking"
+      }
+    ],
     "keywords": "Cinematography, Commercials, Corporate Films"
   }
   </script>

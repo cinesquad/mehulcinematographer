@@ -1,32 +1,56 @@
+# Global Security & Indexing Enhancements
 /*
-  X-Frame-Options: DENY
+  X-Frame-Options: SAMEORIGIN
   X-Content-Type-Options: nosniff
   Referrer-Policy: strict-origin-when-cross-origin
   Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  X-Robots-Tag: max-image-preview:large, max-snippet:-1, max-video-preview:-1
 
-/_astro/ag-system.css
-  Cache-Control: public, max-age=0, must-revalidate
+# Protect Admin & Raw Data Endpoints from GSC Crawlers
+/admin/*
+  X-Robots-Tag: noindex, nofollow, noarchive
+  Cache-Control: private, no-cache, no-store, must-revalidate
 
-/_astro/service-pages.css
-  Cache-Control: public, max-age=0, must-revalidate
+/data/*
+  X-Robots-Tag: noindex, nofollow, noarchive
+  Cache-Control: private, no-cache, no-store, must-revalidate
 
+/scripts/*
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+# Core Framework Assets (Immutable)
 /_astro/*
   Cache-Control: public, max-age=31536000, immutable
 
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
-/*.png
-  Cache-Control: public, max-age=86400
-
-/*.jpg
-  Cache-Control: public, max-age=86400
+# Portfolio Media & Imagery (1-Year Cache with Stale-While-Revalidate)
+/media/*
+  Cache-Control: public, max-age=31536000, stale-while-revalidate=86400
+  X-Robots-Tag: max-image-preview:large
 
 /*.webp
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=31536000, stale-while-revalidate=86400
+  X-Robots-Tag: max-image-preview:large
+
+/*.png
+  Cache-Control: public, max-age=31536000, stale-while-revalidate=86400
+  X-Robots-Tag: max-image-preview:large
+
+/*.jpg
+  Cache-Control: public, max-age=31536000, stale-while-revalidate=86400
+  X-Robots-Tag: max-image-preview:large
 
 /*.svg
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=31536000, stale-while-revalidate=86400
+
+# CSS & JavaScript Bundle Invalidation
+/_astro/ag-system.css
+  Cache-Control: public, max-age=0, must-revalidate
+
+/_astro/service-pages.css
+  Cache-Control: public, max-age=0, must-revalidate
 
 /*.css
   Cache-Control: public, max-age=86400

@@ -1,16 +1,45 @@
 User-agent: Googlebot
 Allow: /
+Allow: /media/
+Allow: /video/
+Disallow: /admin/
+Disallow: /data/
+Disallow: /scripts/
+Disallow: /*?*cat=*
+
+User-agent: Googlebot-Image
+Allow: /media/
+Allow: /*.webp$
+Allow: /*.png$
+Allow: /*.jpg$
+
+User-agent: Googlebot-Video
+Allow: /video/
+Allow: /
 
 User-agent: Bingbot
 Allow: /
+Disallow: /admin/
+Disallow: /data/
+Disallow: /scripts/
+Disallow: /*?*cat=*
 
 User-agent: GPTBot
 Allow: /
+Disallow: /admin/
+Disallow: /data/
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /admin/
+Disallow: /data/
 
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /data/
+Disallow: /scripts/
+Disallow: /*?*cat=*
 
 Sitemap: https://mehulcinematographer.com/sitemap.xml
+Sitemap: https://mehulcinematographer.com/video-sitemap.xml

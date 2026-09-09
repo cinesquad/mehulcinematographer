@@ -38,22 +38,24 @@
   {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": "https://mehulcinematographer.com/advertising-films/#service",
     "name": "Advertising Film & TVC Cinematography",
+    "serviceType": "Commercial Cinematography",
     "provider": {
-      "@type": "LocalBusiness",
-      "name": "Mehul Prajapati – Cinematographer",
-      "url": "https://mehulcinematographer.com/",
-      "image": "https://mehulcinematographer.com/media/mehul-bio.png",
-      "telephone": "+91-9429-225-222",
-      "email": "contact@mehulcinematographer.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Ahmedabad",
-        "addressRegion": "Gujarat",
-        "addressCountry": "IN"
-      }
+      "@type": "ProfessionalService",
+      "@id": "https://mehulcinematographer.com/#professionalservice",
+      "name": "Mehul Prajapati – Cinematographer in Ahmedabad",
+      "url": "https://mehulcinematographer.com/"
     },
-    "areaServed": ["Ahmedabad", "Gandhinagar", "Vadodara", "Surat", "Rajkot", "Gujarat", "India"],
+    "areaServed": [
+      {"@type": "City", "name": "Ahmedabad"},
+      {"@type": "City", "name": "Gandhinagar"},
+      {"@type": "City", "name": "Vadodara"},
+      {"@type": "City", "name": "Surat"},
+      {"@type": "City", "name": "Rajkot"},
+      {"@type": "AdministrativeArea", "name": "Gujarat"},
+      {"@type": "Country", "name": "India"}
+    ],
     "description": "Commercial and advertising film cinematography in Ahmedabad and Gujarat. 75+ ad films for national and regional brands."
   }
   </script>
@@ -332,11 +334,11 @@
               <div class="slate-form-row-2col" data-astro-cid-j7pv25f6>
                 <div class="slate-form-field" data-astro-cid-j7pv25f6>
                   <label for="contactName" class="slate-field-lbl" data-astro-cid-j7pv25f6>NAME *</label>
-                  <input type="text" id="contactName" name="name" required placeholder="Your name or agency" aria-label="Name" data-astro-cid-j7pv25f6>
+                  <input type="text" id="contactName" name="name" required placeholder="Your name or agency" aria-label="Name" autocomplete="name" data-astro-cid-j7pv25f6>
                 </div>
                 <div class="slate-form-field" data-astro-cid-j7pv25f6>
                   <label for="contactInfo" class="slate-field-lbl" data-astro-cid-j7pv25f6>CONTACT INFO *</label>
-                  <input type="text" id="contactInfo" name="contact" required placeholder="Email or phone number" aria-label="Email or Contact" data-astro-cid-j7pv25f6>
+                  <input type="email" id="contactInfo" name="contact" required placeholder="Email or phone number" aria-label="Email or Contact" autocomplete="email" data-astro-cid-j7pv25f6>
                 </div>
               </div>
 

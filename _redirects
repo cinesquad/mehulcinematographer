@@ -10,6 +10,13 @@
 /music-videos/index.html  /music-videos/  301
 /blog/index.html  /blog/  301
 
+# Strict Trailing Slash Redirects for Main Silos
+/portfolio  /portfolio/  301
+/advertising-films  /advertising-films/  301
+/industrial-corporate-films  /industrial-corporate-films/  301
+/music-videos  /music-videos/  301
+/blog  /blog/  301
+
 # Known historical URL variations from Google Search Console
 /video/XzgKe0rbb8w  /video/xzgke0rbb8w/  301
 /video/XzgKe0rbb8w/  /video/xzgke0rbb8w/  301

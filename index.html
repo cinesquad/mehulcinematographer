@@ -46,7 +46,7 @@
   --accent: #FF7024;
   --accent-teal: #00DBD8;
   --accent-light: #FF9865;
-  --accent-gold: #F5A623;
+  --accent-gold: #FF7024;
   --color-error: #ff3c3c;
   --color-whatsapp: #25d366;
   --color-brand-blue: #0082c3;
@@ -59,7 +59,7 @@
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 14px;
-  --radius-btn: 50px;
+  --radius-btn: 10px;
   --container-max: 1280px;
   --container-pad-x: clamp(1.5rem, 5vw, 4rem);
   --section-pad-y: clamp(3rem, 6vh, 6rem);
@@ -75,7 +75,7 @@
   --text-lg: clamp(1.25rem, 2vw, 1.45rem);
   --text-xl: clamp(1.8rem, 3.6vw, 2.5rem);
   --text-hero: clamp(2.5rem, 5.5vw, 3.8rem);
-  --font-heading-weight: 600;
+  --font-heading-weight: 500;
   --font-body-weight: 400;
   --ease-brand: cubic-bezier(0.22, 1, 0.36, 1);
   --dur-fast: 0.3s;
@@ -1020,11 +1020,11 @@
               <div class="slate-form-row-2col" data-astro-cid-j7pv25f6>
                 <div class="slate-form-field" data-astro-cid-j7pv25f6>
                   <label for="contactName" class="slate-field-lbl" data-astro-cid-j7pv25f6>NAME *</label>
-                  <input type="text" id="contactName" name="name" required placeholder="Your name or production agency" aria-label="Name" data-astro-cid-j7pv25f6>
+                  <input type="text" id="contactName" name="name" required placeholder="Your name or production agency" aria-label="Name" autocomplete="name" data-astro-cid-j7pv25f6>
                 </div>
                 <div class="slate-form-field" data-astro-cid-j7pv25f6>
                   <label for="contactInfo" class="slate-field-lbl" data-astro-cid-j7pv25f6>CONTACT INFO *</label>
-                  <input type="text" id="contactInfo" name="contact" required placeholder="Email or phone number" aria-label="Email or Contact" data-astro-cid-j7pv25f6>
+                  <input type="email" id="contactInfo" name="contact" required placeholder="Email or phone number" aria-label="Email or Contact" autocomplete="email" data-astro-cid-j7pv25f6>
                 </div>
               </div>
 
@@ -1069,29 +1069,162 @@
     </footer>
   </section>
   <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": ["LocalBusiness", "ProfessionalService"],
-      "name": "Mehul Prajapati – Cinematographer",
-      "description": "Professional cinematographer based in Ahmedabad, Gujarat with 13+ years and 1,500+ projects.",
-      "url": "https://mehulcinematographer.com/",
-      "image": "https://mehulcinematographer.com/media/mehul-bio.png",
-      "priceRange": "₹₹",
-      "telephone": "+91-9429-225-222",
-      "email": "contact@mehulcinematographer.com",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Ahmedabad",
-        "addressRegion": "Gujarat",
-        "addressCountry": "IN"
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://mehulcinematographer.com/#agency",
+        "name": "9th Sky Network LLP",
+        "alternateName": "9th Sky Network",
+        "url": "https://mehulcinematographer.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://mehulcinematographer.com/#logo",
+          "url": "https://mehulcinematographer.com/media/mehul-bio.png",
+          "caption": "9th Sky Network LLP - Motion Picture & Commercial Production"
+        },
+        "founder": {
+          "@id": "https://mehulcinematographer.com/#person"
+        }
       },
-      "sameAs": [
-        "https://www.instagram.com/mehupraja",
-        "https://twitter.com/mehupraja",
-        "https://www.linkedin.com/in/mehupraja",
-        "https://www.facebook.com/mehupraja"
-      ]
-    }
+      {
+        "@type": "Person",
+        "@id": "https://mehulcinematographer.com/#person",
+        "name": "Mehul Prajapati",
+        "jobTitle": "Director of Photography & Cinematographer",
+        "url": "https://mehulcinematographer.com/",
+        "image": "https://mehulcinematographer.com/media/mehul-bio.png",
+        "worksFor": {
+          "@id": "https://mehulcinematographer.com/#agency"
+        },
+        "sameAs": [
+          "https://www.instagram.com/mehupraja",
+          "https://twitter.com/mehupraja",
+          "https://www.linkedin.com/in/mehupraja",
+          "https://www.facebook.com/mehupraja"
+        ],
+        "knowsAbout": [
+          "https://en.wikipedia.org/wiki/Cinematography",
+          "https://en.wikipedia.org/wiki/Director_of_photography",
+          "https://en.wikipedia.org/wiki/Color_grading",
+          "https://en.wikipedia.org/wiki/Arri_Alexa",
+          "Anamorphic Cinematography",
+          "Commercial Film Production",
+          "Industrial Corporate Documentaries"
+        ]
+      },
+      {
+        "@type": ["ProfessionalService", "LocalBusiness"],
+        "@id": "https://mehulcinematographer.com/#professionalservice",
+        "name": "Mehul Prajapati – Cinematographer in Ahmedabad",
+        "alternateName": "Mehul Cinematographer & DOP",
+        "legalName": "9th Sky Network LLP",
+        "url": "https://mehulcinematographer.com/",
+        "image": "https://mehulcinematographer.com/media/mehul-bio.png",
+        "telephone": "+91-9429-225-222",
+        "email": "contact@mehulcinematographer.com",
+        "priceRange": "₹₹₹",
+        "currenciesAccepted": "INR",
+        "paymentAccepted": "Cash, Credit Card, Bank Wire, UPI",
+        "parentOrganization": {
+          "@id": "https://mehulcinematographer.com/#agency"
+        },
+        "employee": {
+          "@id": "https://mehulcinematographer.com/#person"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ahmedabad",
+          "addressRegion": "Gujarat",
+          "postalCode": "380015",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 23.0225,
+          "longitude": 72.5714
+        },
+        "hasMap": "https://maps.google.com/?q=Mehul+Prajapati+Cinematographer+Ahmedabad",
+        "areaServed": [
+          {
+            "@type": "City",
+            "name": "Ahmedabad",
+            "sameAs": "https://en.wikipedia.org/wiki/Ahmedabad"
+          },
+          {
+            "@type": "City",
+            "name": "Gandhinagar"
+          },
+          {
+            "@type": "City",
+            "name": "Vadodara"
+          },
+          {
+            "@type": "City",
+            "name": "Surat"
+          },
+          {
+            "@type": "City",
+            "name": "Rajkot"
+          },
+          {
+            "@type": "AdministrativeArea",
+            "name": "Gujarat"
+          },
+          {
+            "@type": "Country",
+            "name": "India"
+          }
+        ],
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday",
+              "Friday",
+              "Saturday"
+            ],
+            "opens": "09:00",
+            "closes": "20:00"
+          }
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Cinematography & Film Production Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Advertising Film & TVC Cinematography",
+                "url": "https://mehulcinematographer.com/advertising-films/"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Industrial & Corporate Film Cinematography",
+                "url": "https://mehulcinematographer.com/industrial-corporate-films/"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Music Video Cinematography",
+                "url": "https://mehulcinematographer.com/music-videos/"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
   </script> <!-- FLOATING CONTACT ACTIONS -->
   <div class="floating-actions"> <a
       href="https://wa.me/919429225222?text=Hi%20Mehul,%20I'd%20like%20to%20discuss%20a%20video%20project!"
