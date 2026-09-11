@@ -31,14 +31,14 @@
   <style>
     /* Blog Page Global & Typography */
     body {
-      font-family: 'Poppins', sans-serif;
+      font-family: var(--font-body, 'Raleway', sans-serif);
     }
     .blog-page {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 7.5rem 1.5rem 5rem;
+      padding: clamp(6.5rem, 12vh, 8.5rem) 1.5rem 5rem;
       min-height: 80vh;
-      font-family: 'Poppins', sans-serif;
+      font-family: var(--font-body, 'Raleway', sans-serif);
     }
     .blog-hero {
       text-align: center;
@@ -53,16 +53,16 @@
       color: #ff7d3b;
       margin-bottom: 0.75rem;
       display: inline-block;
-      font-family: 'Poppins', sans-serif;
+      font-family: var(--font-body, 'Raleway', sans-serif);
     }
     .blog-hero h1 {
-      font-family: 'Marcellus', serif;
+      font-family: var(--font-display, 'Raleway', sans-serif);
       font-size: clamp(2.2rem, 5vw, 3.5rem);
-      font-weight: 400;
-      letter-spacing: 0.02em;
+      font-weight: 700;
+      letter-spacing: -0.02em;
       color: #fff;
       margin-bottom: 1rem;
-      line-height: 1.2;
+      line-height: 1.15;
     }
     .blog-hero h1 em {
       font-style: normal;
@@ -188,9 +188,9 @@
       font-family: 'Poppins', sans-serif;
     }
     .blog-card-title {
-      font-family: 'Marcellus', serif;
+      font-family: var(--font-display, 'Raleway', sans-serif);
       font-size: 1.25rem;
-      font-weight: 400;
+      font-weight: 600;
       line-height: 1.35;
       margin: 0 0 0.75rem;
       color: #f1f5f9;
@@ -204,7 +204,7 @@
       color: #ff9865;
     }
     .blog-card-excerpt {
-      color: #94a3b8;
+      color: #FFFFFF;
       font-size: 0.86rem;
       line-height: 1.6;
       margin: 0 0 1.25rem;
@@ -213,7 +213,7 @@
       -webkit-line-clamp: 3;
       -webkit-box-orient: vertical;
       overflow: hidden;
-      font-family: 'Poppins', sans-serif;
+      font-family: var(--font-body, 'Raleway', sans-serif);
     }
     .blog-card-footer {
       display: flex;
@@ -265,7 +265,8 @@
     </div>
     <div class="nav-right">
       <ul class="nav-links">
-        <li><a href="/portfolio">Work</a></li>
+        <li><a href="/portfolio">Showreel</a></li>
+        <li><a href="/clients">Clients</a></li>
         <li class="nav-dropdown">
           <a href="/#services" aria-haspopup="true">Services &#9662;</a>
           <ul class="nav-dropdown-menu">
@@ -274,10 +275,9 @@
             <li><a href="/industrial-corporate-films">Corporate Films</a></li>
           </ul>
         </li>
-        <li><a href="/#about">About</a></li>
-        <li><a href="/#clients">Clients</a></li>
+        <li><a href="/about">About</a></li>
         <li><a href="/blog" class="active" style="color: #ff7d3b; font-weight: 600;">Blog</a></li>
-        <li><a href="/#contact">Contact</a></li>
+        <li><a href="/contact">Contact</a></li>
       </ul>
       <div class="nav-iso">
         <span class="iso-label">ISO</span>
@@ -292,14 +292,15 @@
 
   <!-- MOBILE DRAWER -->
   <nav class="nav-drawer" id="navDrawer">
-    <a href="/portfolio" class="drawer-link">Work</a>
+    <a href="/portfolio" class="drawer-link">Showreel</a>
+    <a href="/clients" class="drawer-link">Clients</a>
     <a href="/music-videos" class="drawer-link">Music Videos</a>
     <a href="/advertising-films" class="drawer-link">Advertising Films</a>
     <a href="/industrial-corporate-films" class="drawer-link">Corporate Films</a>
-    <a href="/#about" class="drawer-link">About</a>
-    <a href="/#clients" class="drawer-link">Clients</a>
+    <a href="/about" class="drawer-link">About</a>
+    <a href="/clients" class="drawer-link">Clients</a>
     <a href="/blog" class="drawer-link" style="color: #ff7d3b;">Blog</a>
-    <a href="/#contact" class="drawer-link">Contact</a>
+    <a href="/contact" class="drawer-link">Contact</a>
     
   <div class="drawer-socials">
     <a href="https://instagram.com/mehupraja" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"></path></svg></a>
@@ -340,7 +341,7 @@
           </h2>
           <p class="blog-card-excerpt">When an agency needed a pan-India corporate film for Gokul Agro delivered in 15 days, we built an agile production pipeline from scratch handling multi-plant direction, cinematography, and rapid-turnaround post-production.</p>
           <div class="blog-card-footer">
-            <div class="blog-tags-wrap"><span class="blog-tag">#Cinematography</span><span class="blog-tag">#Commercials</span><span class="blog-tag">#Corporate Films</span></div>
+            <div class="blog-tags-wrap"><span class="blog-tag">Cinematography</span><span class="blog-tag">Commercials</span><span class="blog-tag">Corporate Films</span></div>
             <a href="/blog/behind-the-lens-how-we-scripted-shot-and-delivered-a-pan-india-industrial-film-in-just-15-days/" class="blog-read-link">
               Read Article <span>&rarr;</span>
             </a>
@@ -352,80 +353,43 @@
   </div>
 
   
-  <style>
-    footer {
-      width: 100% !important;
-      padding: 2.2rem clamp(1.5rem, 5vw, 4rem) 2.5rem !important;
-      border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
-      display: flex !important;
-      flex-direction: column !important;
-      align-items: center !important;
-      justify-content: center !important;
-      gap: 0.9rem !important;
-      background: #0a0a0a !important;
-      box-sizing: border-box !important;
-      text-align: center !important;
-      margin-top: auto !important;
-    }
-    .footer-name {
-      font-family: 'Poppins', -apple-system, sans-serif !important;
-      font-size: clamp(0.7rem, 1.5vw, 0.82rem) !important;
-      letter-spacing: 0.08em !important;
-      text-transform: uppercase !important;
-      color: rgba(255, 255, 255, 0.75) !important;
-      text-align: center !important;
-      margin: 0 auto !important;
-      display: block !important;
-    }
-    .footer-service-links {
-      display: flex !important;
-      flex-wrap: wrap !important;
-      gap: 0.5rem 1.5rem !important;
-      justify-content: center !important;
-      align-items: center !important;
-      text-align: center !important;
-      margin: 0 auto !important;
-    }
-    .footer-service-links a {
-      color: rgba(255, 255, 255, 0.55) !important;
-      font-size: 0.8rem !important;
-      text-decoration: none !important;
-      font-family: 'Poppins', -apple-system, sans-serif !important;
-      font-weight: 500 !important;
-      transition: color 0.2s ease !important;
-    }
-    .footer-service-links a:hover,
-    .footer-service-links a[aria-current="page"] {
-      color: #ff7d3b !important;
-    }
-    .footer-copy {
-      font-family: 'Poppins', -apple-system, sans-serif !important;
-      font-size: 0.75rem !important;
-      color: rgba(255, 255, 255, 0.4) !important;
-      text-align: center !important;
-      margin: 0 auto !important;
-      display: block !important;
-    }
-    @media (max-width: 600px) {
-      footer {
-        padding: 2rem 1.5rem 6rem !important;
-        gap: 0.75rem !important;
-      }
-      .footer-service-links {
-        gap: 0.4rem 1rem !important;
-      }
-    }
-  </style>
-  <footer>
-    <span class="footer-name">Mehul Prajapati — Cinematographer &amp; Visual Innovator</span>
-    <nav class="footer-service-links" aria-label="Service pages">
-      <a href="/music-videos">Music Videos</a>
-      <a href="/advertising-films">Advertising Films</a>
-      <a href="/industrial-corporate-films">Corporate Films</a>
-      <a href="/portfolio">Portfolio</a>
-      <a href="/blog">Blog</a>
-    </nav>
-    <span class="footer-copy">&copy; 2026 · 9th Sky Network LLP</span>
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand-col">
+        <span class="footer-brand-title">Mehul Prajapati</span>
+        <p class="footer-brand-desc">
+          Director of Photography &amp; Cinematographer based in Ahmedabad, Gujarat. Crafting high-impact commercials, brand documentaries, and music videos worldwide.
+        </p>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Cinematography Work</span>
+        <nav class="footer-nav-list" aria-label="Cinematography and film categories">
+          <a href="/advertising-films/">Advertising Films &amp; TVCs</a>
+          <a href="/industrial-corporate-films/">Corporate &amp; Industrial Films</a>
+          <a href="/music-videos/">Music Videos &amp; Albums</a>
+          <a href="/portfolio/">Complete Showreel (84+ Films)</a>
+        </nav>
+      </div>
+      <div class="footer-col">
+        <span class="footer-col-title">Studio &amp; Insights</span>
+        <nav class="footer-nav-list" aria-label="Studio links and articles">
+          <a href="/clients/">Brands &amp; Collaborations</a>
+          <a href="/about/">About Mehul Prajapati</a>
+          <a href="/blog/">Cinematography Blog &amp; Insights</a>
+          <a href="/contact/">Contact &amp; Bookings</a>
+        </nav>
+      </div>
+    </div>
+    <div class="footer-bottom-bar">
+      <span class="footer-bottom-copy">&copy; 2026 Mehul Prajapati &middot; 9th Sky Network LLP. All rights reserved.</span>
+      <div class="footer-bottom-links">
+        <a href="/portfolio/">Showreel</a>
+        <a href="/clients/">Clients</a>
+        <a href="/about/">About</a>
+        <a href="/blog/">Blog</a>
+        <a href="/contact/">Contact</a>
+      </div>
+    </div>
   </footer>
   <!-- FLOATING CONTACT ACTIONS -->
   <div class="floating-actions">

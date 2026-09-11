@@ -69,28 +69,54 @@
 .service-stats-row {
   display: flex;
   justify-content: center;
-  gap: var(--space-md);
+  align-items: center;
+  gap: 0;
   flex-wrap: wrap;
   margin-top: 2rem;
   padding-top: 1.5rem;
   border-top: 1px solid rgba(255,255,255,0.07);
 }
 
-.service-stat { text-align: center; }
+.service-stat {
+  position: relative;
+  text-align: center;
+  padding: 0.6rem clamp(1.2rem, 2.5vw, 2.2rem);
+}
+
+.service-stat::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 15%;
+  height: 70%;
+  width: 1px;
+  background: linear-gradient(180deg, transparent, rgba(255, 255, 255, 0.14), transparent);
+  pointer-events: none;
+}
+
+.service-stat:first-child::before {
+  display: none;
+}
 
 .service-stat-num {
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 2.8rem);
-  font-weight: 700;
-  color: #fff;
+  font-size: clamp(1.5rem, 2.3vw, 2.4rem);
+  font-weight: 300;
+  color: #FFFFFF;
+  line-height: 1;
+  margin-bottom: 0.45rem;
   display: block;
 }
 
 .service-stat-label {
-  font-size: 0.82rem;
-  color: rgba(255,255,255,0.5);
+  font-family: var(--font-body);
+  font-size: clamp(0.55rem, 0.75vw, 0.66rem);
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  color: #FFFFFF;
+  line-height: 1.35;
+  display: block;
 }
 
 /* Service Content Section */
@@ -230,22 +256,25 @@
   position: absolute;
   top: 0;
   left: 0;
-  width: 28px;
+  width: 32px;
   height: 2px;
-  background: var(--accent, #ff7d3b);
-  opacity: 0.8;
-  transition: width 0.3s ease;
+  background: linear-gradient(90deg, var(--accent, #FF7024), var(--accent-teal, #00DBD8), transparent);
+  border-radius: 2px;
+  opacity: 0.85;
+  transition: width 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), opacity 0.3s ease;
 }
 
 .feature-card:hover {
   background: rgba(255,255,255,0.045);
-  border-color: rgba(255, 125, 59, 0.35);
+  border-color: rgba(255, 112, 36, 0.35);
   transform: translateY(-3px);
   box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
 }
 
 .feature-card:hover::before {
   width: 100%;
+  opacity: 1;
+  background: linear-gradient(90deg, var(--accent, #FF7024) 0%, var(--accent-teal, #00DBD8) 65%, transparent 100%);
 }
 
 .feature-card h3 {
@@ -261,7 +290,7 @@
 .feature-card p {
   font-family: var(--font-body, 'Raleway', sans-serif);
   font-size: 0.88rem;
-  color: rgba(255,255,255,0.65);
+  color: #FFFFFF;
   line-height: 1.65;
   margin: 0;
 }
@@ -275,7 +304,7 @@
 
 .service-cta-block p { 
   font-family: var(--font-body);
-  color: rgba(255,255,255,0.6); 
+  color: #FFFFFF; 
   margin-bottom: 1.5rem; 
 }
 
