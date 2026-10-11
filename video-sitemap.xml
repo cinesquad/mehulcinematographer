@@ -2,6 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
+    <loc>https://mehulcinematographer.com/video/mfopwp2ptim/</loc>
+    <video:video>
+      <video:thumbnail_loc>https://img.youtube.com/vi/MfOPWP2ptiM/hqdefault.jpg</video:thumbnail_loc>
+      <video:title>Inside Schilthorn Precision | Precision Engineering &amp; CNC Manufacturing Facility | Cinematographer Mehul Prajapati</video:title>
+      <video:description>This video offers a glimpse into our manufacturing facility, advanced machinery, skilled engineering team and day-to-day production environment the people and processes behind the precision components we manufacture.
+ 
+With 15+ years of manufacturing experience, Schilthorn Precision combines engineering expertise, modern machinery and quality-focused manufacturing processes to deliver precision-engineered components for diverse industrial applications.
+ 
+⚙️ Advanced Manufacturing Machinery
+Get a closer look at our CNC and other manufacturing equipment used across different production processes.
+ 
+👨‍🔧 Skilled Engineering &amp; Manufacturing Team
+Meet the people behind our manufacturing operations, bringing technical expertise and attention to detail to every project.
+ 
+🏭 Manufacturing Facility
+See our production environment and the processes that support consistent, reliable manufacturing.
+ 
+🔧 Precision Manufacturing Capabilities
+Our capabilities include CNC milling, CNC turning, grinding, forging, surface treatment, fabrication and precision machining, supported by modern manufacturing infrastructure.
+ 
+🌎 Serving Diverse Industries
+Schilthorn supports customers across Space &amp; Aerospace, HVAC, Automotive, CPVC Fittings, Fittings &amp; Fasteners, and Oil &amp; Gas.
+ 
+From machining and process development to quality-focused production, every stage is driven by our commitment to precision, reliability and engineering excellence.</video:description>
+      <video:player_loc>https://www.youtube.com/embed/MfOPWP2ptiM</video:player_loc>
+      <video:publication_date>2026-01-01T08:00:00+05:30</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+      <video:uploader info="https://mehulcinematographer.com/">Mehul Prajapati</video:uploader>
+    </video:video>
+  </url>
+  <url>
     <loc>https://mehulcinematographer.com/video/patel-jewellers-opening-campaign-ad-1/</loc>
     <video:video>
       <video:thumbnail_loc>https://img.youtube.com/vi/8acC2ogoyB4/hqdefault.jpg</video:thumbnail_loc>
@@ -364,7 +395,7 @@
   <url>
     <loc>https://mehulcinematographer.com/video/jeete-have-india-cricket-anthem/</loc>
     <video:video>
-      <video:thumbnail_loc>https://img.youtube.com/vi/a7o_G0gzjdY/hqdefault.jpg</video:thumbnail_loc>
+      <video:thumbnail_loc>https://mehulcinematographer.com/media/thumbnails/jeete-have-india.jpg</video:thumbnail_loc>
       <video:title>Jeete Have India — Cricket Anthem | Cinematographer Mehul Prajapati</video:title>
       <video:description>A high-octane Gujarati sports anthem directed by Kushal Chokshi and featuring Mitra Gadhavi for the T20 World Cup, shot with vibrant colors and energetic crowd choreography.</video:description>
       <video:player_loc>https://www.youtube.com/embed/a7o_G0gzjdY</video:player_loc>

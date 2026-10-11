@@ -5,7 +5,6 @@ Allow: /video/
 Disallow: /admin/
 Disallow: /data/
 Disallow: /scripts/
-Disallow: /*?*cat=*
 
 User-agent: Googlebot-Image
 Allow: /media/
@@ -22,7 +21,6 @@ Allow: /
 Disallow: /admin/
 Disallow: /data/
 Disallow: /scripts/
-Disallow: /*?*cat=*
 
 User-agent: GPTBot
 Allow: /
@@ -39,7 +37,6 @@ Allow: /
 Disallow: /admin/
 Disallow: /data/
 Disallow: /scripts/
-Disallow: /*?*cat=*
 
 Sitemap: https://mehulcinematographer.com/sitemap.xml
 Sitemap: https://mehulcinematographer.com/video-sitemap.xml
