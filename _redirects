@@ -2,6 +2,10 @@
 # Redirect Cloudflare email protection
 /cdn-cgi/l/email-protection  /  301
 
+# Asset Casing Redirects for Linux/Cloudflare
+/media/logos/steelcase.png  /media/logos/Steelcase.png  301
+/media/logos/nikkiso.png  /media/logos/Nikkiso.png  301
+
 # Redirect trailing index.html for main pages
 /index.html  /  301
 /portfolio/index.html  /portfolio/  301
