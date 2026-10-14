@@ -54,10 +54,13 @@
 /contact  /contact/  301
 
 # Known historical URL variations from Google Search Console
-/video/XzgKe0rbb8w  /video/xzgke0rbb8w/  301
-/video/XzgKe0rbb8w/  /video/xzgke0rbb8w/  301
-/video/XzgKe0rbb8w/index.html  /video/xzgke0rbb8w/  301
-/video/XzgKe0rbb8w/*  /video/xzgke0rbb8w/  301
+/video/XzgKe0rbb8w  /video/amdavad-hit-chhe/  301
+/video/XzgKe0rbb8w/  /video/amdavad-hit-chhe/  301
+/video/XzgKe0rbb8w/index.html  /video/amdavad-hit-chhe/  301
+/video/XzgKe0rbb8w/*  /video/amdavad-hit-chhe/  301
+/video/xzgke0rbb8w  /video/amdavad-hit-chhe/  301
+/video/xzgke0rbb8w/  /video/amdavad-hit-chhe/  301
+/video/xzgke0rbb8w/index.html  /video/amdavad-hit-chhe/  301
 
 # 301 Redirects for Corrected Typo Slugs
 /video/carrera-obssesed-why-not  /video/carrera-obsessed-why-not/  301
