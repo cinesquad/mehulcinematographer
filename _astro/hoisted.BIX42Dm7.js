@@ -30,7 +30,11 @@ import"./hoisted.B410Xb_9.js";(function(){
     setTimeout(function(){
       var r=0;
       c.forEach(function(t){
-        var s=i==="all"||t.dataset.cat===i;
+        var matchIndustry = t.dataset.industry && t.dataset.industry.toLowerCase() === i.toLowerCase();
+        var matchCat = t.dataset.cat && t.dataset.cat.toLowerCase() === i.toLowerCase();
+        var matchSeasonal = t.dataset.seasonal && t.dataset.seasonal.toLowerCase() === i.toLowerCase();
+        var matchTags = t.dataset.tags && t.dataset.tags.toLowerCase().indexOf(i.toLowerCase()) !== -1;
+        var s = i === "all" || matchIndustry || matchCat || matchSeasonal || matchTags;
         s?(t.style.display="",t.style.setProperty("--s",String(r++)),t.classList.remove("in"),t.offsetWidth,t.classList.add("in")):t.style.display="none"
       });
       n.classList.remove("fading")

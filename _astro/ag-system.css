@@ -2111,3 +2111,114 @@ footer.site-footer,
     font-size: clamp(1.8rem, 7vw, 2.5rem) !important;
   }
 }
+
+/* ── 15. Homepage Services Showcase & Grid ── */
+.services-section {
+  min-height: auto !important;
+  padding: clamp(3rem, 5vh, 4.5rem) var(--container-pad-x);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  position: relative;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1rem;
+  width: 100%;
+}
+
+.service-home-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--radius-md, 8px);
+  padding: 1.25rem 1.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+}
+
+.service-home-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent, #FF7024), var(--accent-teal, #00DBD8));
+  opacity: 0.8;
+  transition: width 0.35s ease;
+}
+
+.service-home-card:hover {
+  transform: translateY(-3px);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 112, 36, 0.35);
+}
+
+.service-home-card:hover::before {
+  width: 100%;
+}
+
+.service-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+}
+
+.service-card-num {
+  font-family: var(--font-display, 'Raleway', sans-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--accent, #FF7024);
+  letter-spacing: 0.04em;
+}
+
+.service-card-title {
+  font-family: var(--font-display, 'Raleway', sans-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 0.4rem;
+  line-height: 1.25;
+  text-transform: capitalize;
+}
+
+.service-card-desc {
+  font-family: var(--font-body, 'Raleway', sans-serif);
+  font-size: 0.84rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.5;
+  margin: 0;
+}
+
+.service-card-link {
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent, #FF7024);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 1rem;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.service-home-card:hover .service-card-link {
+  color: #fff;
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr !important;
+    gap: 0.75rem !important;
+  }
+}
+
+
