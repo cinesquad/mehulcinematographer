@@ -42,7 +42,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&family=Alex+Brush&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./_astro/index.DpEG4WZ2.css">
   <link rel="stylesheet" href="./_astro/index.C69Mw3z-.css">
-  <link rel="stylesheet" href="./_astro/ag-system.css?v=2.2">
+  <link rel="stylesheet" href="/_astro/ag-system.css?v=2.5">
   <script type="module" src="./_astro/hoisted.vhiWcSAP.js"></script>
   <style id="gl-design-system-variables">
 :root {
@@ -93,6 +93,96 @@
 }
 </style>
   <style id="gl-editor-styles"></style>
+  <style id="services-critical-css">
+    .services-section {
+      min-height: auto !important;
+      padding: clamp(3rem, 5vh, 4.5rem) var(--container-pad-x, clamp(1.5rem, 5vw, 4rem)) !important;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+      position: relative !important;
+    }
+    .services-grid {
+      display: grid !important;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr)) !important;
+      gap: 1rem !important;
+      width: 100% !important;
+    }
+    .service-home-card {
+      background: rgba(255, 255, 255, 0.02) !important;
+      border: 1px solid rgba(255, 255, 255, 0.07) !important;
+      border-radius: var(--radius-md, 10px) !important;
+      padding: 1.25rem 1.4rem !important;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: space-between !important;
+      text-decoration: none !important;
+      position: relative !important;
+      overflow: hidden !important;
+      color: inherit !important;
+      transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease !important;
+    }
+    .service-home-card, .service-home-card * {
+      text-decoration: none !important;
+    }
+    .service-home-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 32px;
+      height: 2px;
+      background: linear-gradient(90deg, var(--accent, #FF7024), var(--accent-teal, #00DBD8));
+      opacity: 0.8;
+      transition: width 0.35s ease;
+    }
+    .service-home-card:hover {
+      transform: translateY(-3px) !important;
+      background: rgba(255, 255, 255, 0.04) !important;
+      border-color: rgba(255, 112, 36, 0.35) !important;
+    }
+    .service-home-card:hover::before {
+      width: 100% !important;
+    }
+    .service-card-top {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      margin-bottom: 0.6rem !important;
+    }
+    .service-card-num {
+      font-family: var(--font-display, 'Raleway', sans-serif) !important;
+      font-size: 1.05rem !important;
+      font-weight: 700 !important;
+      color: var(--accent, #FF7024) !important;
+      letter-spacing: 0.04em !important;
+    }
+    .service-card-link-icon {
+      display: inline-flex !important;
+      align-items: center !important;
+      color: var(--accent, #FF7024) !important;
+    }
+    .service-card-title {
+      font-family: var(--font-display, 'Raleway', sans-serif) !important;
+      font-size: 1.15rem !important;
+      font-weight: 600 !important;
+      color: #fff !important;
+      margin: 0 0 0.4rem !important;
+      line-height: 1.25 !important;
+      text-transform: capitalize !important;
+    }
+    .service-card-desc {
+      font-family: var(--font-body, 'Raleway', sans-serif) !important;
+      font-size: 0.84rem !important;
+      color: rgba(255, 255, 255, 0.65) !important;
+      line-height: 1.5 !important;
+      margin: 0 !important;
+    }
+    @media (max-width: 768px) {
+      .services-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.75rem !important;
+      }
+    }
+  </style>
 </head>
 
 <body> <!-- Cinematic Overlays & Effects -->
@@ -332,6 +422,12 @@
   <!-- ── HOMEPAGE SERVICES SECTION ── -->
   
   <!-- ── HOMEPAGE SERVICES SECTION ── -->
+  
+  <!-- ── HOMEPAGE SERVICES SECTION (MINIMAL & BALANCED) ── -->
+  
+  <!-- ── HOMEPAGE SERVICES SECTION (MINIMAL & BALANCED) ── -->
+  
+  <!-- ── HOMEPAGE SERVICES SECTION (MINIMAL & BALANCED) ── -->
   
   <!-- ── HOMEPAGE SERVICES SECTION (MINIMAL & BALANCED) ── -->
   
